@@ -53,7 +53,7 @@ class HomePage extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(top: 30.0, left: 30.0, right: 30.0),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Column(
                   children: [
