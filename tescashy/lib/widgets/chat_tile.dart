@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 import 'package:tescashy/theme.dart';
 
@@ -6,8 +8,10 @@ class ChatTile extends StatelessWidget {
   final name;
   final text;
   final time;
+  final bool unread;
 
-  ChatTile({this.imageUrl, this.name, this.text, this.time});
+  ChatTile(
+      {this.imageUrl, this.name, this.text, this.time, this.unread = false});
 
   @override
   Widget build(BuildContext context) {
@@ -30,10 +34,12 @@ class ChatTile extends StatelessWidget {
                 name,
                 style: titleTextStyle,
               ),
-              Text(
-                text,
-                style: subtitleTextStyle.copyWith(color: blackColor),
-              )
+              Text(text,
+                  style: unread
+                      ? subtitleTextStyle.copyWith(
+                          color: blackColor,
+                        )
+                      : subtitleTextStyle)
             ],
           ),
           Spacer(),
